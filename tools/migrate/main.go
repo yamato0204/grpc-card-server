@@ -4,6 +4,9 @@ import (
 	"fmt"
 	"os"
 
+	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/golang-migrate/migrate/v4/source/file"
+
 	"github.com/golang-migrate/migrate/v4"
 	mmysql "github.com/golang-migrate/migrate/v4/database/mysql"
 	"github.com/google/martian/v3/log"
@@ -48,6 +51,9 @@ func migrateMysqlDB(cfg *mysql.Config) error {
 	if err != nil {
 		return err
 	}
+
+	fmt.Println("db is created")
+	fmt.Println(db.Driver())
 
 	driver, err := mmysql.WithInstance(db, &mmysql.Config{})
 	if err != nil {
