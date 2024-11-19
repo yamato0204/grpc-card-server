@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package service;
+
+import "enums/platform.proto";
+import "model/user.proto";
+
+
+option go_package = "github.com/yamato0204/grpc-card-server/pkg/pb/service";
+
+// UserService
+service UserService {
+  // ListUser
+  rpc ListUser(ListUserRequest) returns (ListUserResponse) {}
+  // GetUser
+  rpc GetUser(GetUserRequest) returns (GetUserResponse) {}
+  // CreateUser
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse) {}
+  // UpdateUser
+  rpc UpdateUserName(UpdateUserNameRequest) returns (UpdateUserNameResponse) {}
+}
+
+message ListUserRequest {}
+
+message ListUserResponse {
+  repeated model.User users = 1;
+}
+
+message GetUserRequest {
+  string user_id = 1;
+}
+
+message GetUserResponse {
+  model.User user = 1;
+}
+
+message CreateUserRequest {
+  string name = 1;
+  enums.Platform platform = 2;
+}
+
+message CreateUserResponse {
+  model.User user = 1;
+}
+
+message UpdateUserNameRequest {
+  string user_id = 1;
+  string name = 2;
+}
+
+message UpdateUserNameResponse {
+  model.User user = 1;
+}
