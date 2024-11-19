@@ -9,9 +9,12 @@ require (
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/golang-migrate/migrate/v4 v4.18.1
 	github.com/google/martian/v3 v3.3.3
+	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/spf13/cobra v1.5.0
 	github.com/volatiletech/sqlboiler/v4 v4.17.1
 	github.com/volatiletech/strmangle v0.0.8
+	golang.org/x/exp v0.0.0-20230315142452-642cacee5cc0
+	golang.org/x/sync v0.8.0
 	google.golang.org/grpc v1.68.0
 	google.golang.org/protobuf v1.35.2
 )
@@ -26,7 +29,7 @@ require (
 	go.uber.org/atomic v1.7.0 // indirect
 	golang.org/x/net v0.29.0 // indirect
 	golang.org/x/sys v0.25.0 // indirect
-	golang.org/x/text v0.18.0 // indirect
+	golang.org/x/text v0.19.0 // indirect
 	golang.org/x/xerrors v0.0.0-20231012003039-104605ab7028 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240903143218-8af14fe29dc1 // indirect
 )
